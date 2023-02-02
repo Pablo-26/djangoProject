@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Buscar</title>
+        <style>
+            body{
+                background-image: url("https://images5.alphacoders.com/633/thumb-1920-633151.jpg");
+                background-size: cover;
+            }
+            #conte {
+                padding: 35px;
+                margin-right: 400px;
+                margin-bottom: 50px;
+                margin-left: 400px;
+                border-radius:10px;
+            }
+            #search {
+                width: 400px;
+                height: 50px;
+                font-family: Courier;
+                font-size: 30px;
+                margin: auto;
+                display:block;
+                border-radius:10px;
+            }
+            #boton {
+                width: 300px;
+                height: 40px;
+                font-family: Courier;
+                font-size: 30px;
+                margin: auto;
+                display:block;
+                border-radius:15px;
+                background-color: greenyellow;
+
+         }
+  </style>
+    </head>
+    <body>
+    <h1><center><img src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" width="500" height="300"></center></h1>
+      <form action="{% url 'search_word' %}" method="get">
+      <div id="conte" >
+        <center><input type="text" id="search" name="word" placeholder="Busca tu personaje "></center>
+    </div>
+          <center><input id = "boton" type="submit" value="Suscribirse"></center>
+    </form>
+
+    </body>
+    </html>
+
