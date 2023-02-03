@@ -9,7 +9,25 @@
   </style>
 <h1><center><img src="https://logos-world.net/wp-content/uploads/2022/01/Rick-And-Morty-Logo.png" width="300" height="150"></center></h1>
 <h2><span style="font-family: Courier; font-size: large; color: #adff2f; "> El personaje buscado es:</span></h2><BR>
-<p><span style="font-family: Arial; color: #f0f8ff; ">{{result}}</span></p>
+
+<table>
+    {% for personaje in result %}
+        <tr>
+        <td style="color: aliceblue; font-size: 24px; font-weight: bold;">
+            {{ personaje.id }}
+        </td>
+         <td style="color: aliceblue; font-size: 24px; font-weight: bold;">
+            {{ personaje.name }}
+        </td>
+         <td style="color: aliceblue; font-size: 24px; font-weight: bold;">
+            {{ personaje.gender }}
+        </td>
+         <td style="color: aliceblue; font-size: 24px; font-weight: bold;">
+            {{ personaje.species }}
+        </td>
+        </tr>
+    {% endfor %}
+</table>
 
 </body>
 </html>

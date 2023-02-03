@@ -13,21 +13,11 @@ def search_characters(name):
 
     url = 'https://rickandmortyapi.com/api/character'
     observable = requests.get(url)  # OJO CON EL REQUEST
-
     if observable.status_code == 200:
-        jsonfin = json.loads(observable.text)
-        tupla = tuple(jsonfin['results'])
-        try:
-            resultado = list(filter(lambda x: x['name'] == name, tupla))[0]
-
-            return (f"id: {resultado['id']}\n"
-                    f"Nombre: {resultado['name']}\n "
-                    f"Genero: {resultado['gender']}\n")
-
-        except:
-            warning = "El personaje ingresado no se ha encontrado"
-            return warning
-
+        datos = observable.json()
+        resultado = list(filter(lambda x: name in x['name'], datos["results"]))
+        return resultado
+    return []
 
 
 def procesar(request):
